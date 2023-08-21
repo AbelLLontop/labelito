@@ -17,8 +17,10 @@ const DataPage = () => {
 
     >
       <section className='
-        lg:min-w-[31rem]
-
+       lg:min-w-[31rem]
+       h-fit
+       lg:sticky
+        lg:top-24
       '
       >
         <HeaderPost
