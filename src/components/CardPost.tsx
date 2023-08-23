@@ -4,7 +4,10 @@ const CardPost = () => {
   return (
     <div
       className='cursor-pointer
-    bg-slate-100 dark:bg-blue-200/10 py-4 px-8 rounded-md'
+    bg-slate-100 dark:bg-blue-200/10 py-4 px-8 rounded-md
+    hover:border-slate-600 border border-transparent
+
+    '
     >
       <header className=' dark:text-gray-400'>
         2018-present

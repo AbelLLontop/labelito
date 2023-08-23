@@ -16,7 +16,8 @@ const BlogsPage = () => {
         />
         <section>
           <Typography>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad porro suscipit inventore est iste vel excepturi quod odio? Eaque sint a accusamus temporibus culpa, expedita minima. Magni quisquam nihil adipisci.
+            El contenido de este blog aun no esta disponible, pero puedes ver la estructura de como se veran los blogs
+
           </Typography>
 
           <section className='grid sm-grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pb-4'>
