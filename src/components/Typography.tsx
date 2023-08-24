@@ -1,4 +1,5 @@
 import React from 'react'
+
 type varianst = 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
 interface Props{
     variant?: varianst,
@@ -6,9 +7,10 @@ interface Props{
 }
 
 const Typography = (props:Props) => {
+  const { children, ...others } = props
   if (props.variant === 'h1') {
     return (
-      <h1 className='text-4xl md:text-6xl lg:text-8xl font-bold py-4 '>
+      <h1 {...others} className='text-4xl md:text-6xl lg:text-7xl font-bold py-4 '>
         <span className='text-blue-700 mr-2'>#</span>
         {props.children}
       </h1>
@@ -16,12 +18,12 @@ const Typography = (props:Props) => {
   }
   if (props.variant === 'h2') {
     return (
-      <h2 className='text-2xl font-bold py-2 '><span className='text-blue-700 mr-2'>#</span>{props.children}</h2>
+      <h2 {...others} className='text-2xl font-bold py-2 '><span className='text-blue-700 mr-2'>#</span>{props.children}</h2>
     )
   }
   if (props.variant === 'h3') {
     return (
-      <h3 className='text-xl font-bold py-2 '><span className='text-blue-700 mr-2'>|</span>{props.children}</h3>
+      <h3 {...others} className='text-xl font-bold py-2 '><span className='text-blue-700 mr-2'>|</span>{props.children}</h3>
 
     )
   }
