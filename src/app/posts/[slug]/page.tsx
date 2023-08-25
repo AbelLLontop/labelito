@@ -15,7 +15,7 @@ export const generateStaticParams = async () => {
   const posts = await getPostMetaData()
   if (!posts) return []
   return posts.map((post) => ({
-    postId: post.id
+    slug: post.id
   }))
 }
 
