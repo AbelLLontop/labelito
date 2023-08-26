@@ -1,12 +1,12 @@
-import Link from 'next/link'
-import React from 'react'
+---
+title: "Primera pagina de prueba para backend"
+date: "2023-08-23"
+description: "Una nueva descripcion"
+tags: ['nextjs','next.js','new']
+---
 
-interface Props{
-  title: string
-  date: string
-  description:string
-  route:string
-}
+
+```tsx
 const CardPost = (props:Props) => {
   return (
     <div
@@ -17,7 +17,7 @@ const CardPost = (props:Props) => {
     hover:border-slate-600 border border-transparent
     '
     >
-      <Link href={props.route}>
+      <Link href={`/posts/${props.id}`}>
 
         <header className=' dark:text-gray-400'>
           {props.date}
@@ -56,4 +56,4 @@ const CardPost = (props:Props) => {
   )
 }
 
-export default CardPost
+```

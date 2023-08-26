@@ -5,6 +5,7 @@ export interface PostMetaData{
     title:string;
     date:string;
     tags:string[];
+    description:string;
 }
 
 export interface BlogpPost{

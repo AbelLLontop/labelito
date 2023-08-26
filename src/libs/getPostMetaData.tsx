@@ -31,10 +31,10 @@ export const components = {
   )
 
 }
-export const getPostByName = async (fileName: string): Promise<BlogpPost|undefined> => {
-  const folder = 'src/data/posts'
-  const fileContent = await fs.readFile(`${folder}/${fileName}`, 'utf8')
-  const { frontmatter, content } = await compileMDX<{title:string, date:string, tags:string[]}>({
+
+export const getPostByName = async (route:string, fileName: string): Promise<BlogpPost|undefined> => {
+  const fileContent = await fs.readFile(`${route}/${fileName}`, 'utf8')
+  const { frontmatter, content } = await compileMDX<{title:string, date:string, tags:string[], description:string}>({
     source: fileContent,
     components,
     options: {
@@ -61,10 +61,11 @@ export const getPostByName = async (fileName: string): Promise<BlogpPost|undefin
   })
 
   const id = fileName.replace(/\.mdx$/, '')
+  const slug = id.split(' ').join('-')
 
   const blogPostObj:BlogpPost = {
     meta: {
-      id, title: frontmatter.title, date: frontmatter.date, tags: frontmatter.tags
+      id: slug, title: frontmatter.title, date: frontmatter.date, tags: frontmatter.tags, description: frontmatter.description
     },
     content
   }
@@ -72,36 +73,37 @@ export const getPostByName = async (fileName: string): Promise<BlogpPost|undefin
   return blogPostObj
 }
 
-const getPostMetaData = async ():Promise<PostMetaData[] | undefined> => {
-  const folder = 'src/data/posts'
-  const files = await fs.readdir(folder)
+// obtener contenido de blog
+export const getPostContent = async (route:string, postId:string):Promise<BlogpPost> => {
+  const desSlug = postId.split('-').join(' ')
+  const fileName = `${desSlug}.mdx`
+  const post = await getPostByName(route, fileName)
+  if (!post) {
+    return {
+      meta: {
+        id: '', title: '', date: '', tags: [], description: ''
+      },
+      content: <></>
+    }
+  }
+  return post
+}
+// obtener metadata de archivos
+
+// const folder = 'src/data/posts'
+const getPostMetaData = async (route:string):Promise<PostMetaData[] | undefined> => {
+  const files = await fs.readdir(route)
   const filesArray = files.filter((file) => file.endsWith('.mdx'))
   const posts:PostMetaData[] = []
 
   for (const file of filesArray) {
-    const post = await getPostByName(file)
+    const post = await getPostByName(route, file)
     if (post) {
       const { meta } = post
       posts.push(meta)
     }
   }
   return posts.sort((a, b) => a.date < b.date ? 1 : -1)
-
-  // const posts = markdownPosts.map(async (fileName) => {
-  //   const fileContents = await fs.readFile(`${folder}/${fileName}`, 'utf8')
-  //   const matterResult = matter(fileContents)
-  //   return {
-  //     title: matterResult.data.title,
-  //     date: matterResult.data.date,
-  //     subtitle: matterResult.data.subtitle,
-  //     slug: fileName.replace('.mdx', '')
-
-  //   }
-  // })
-  // return Promise.all(posts)
 }
 
 export default getPostMetaData
-
-// https://www.youtube.com/watch?v=6ih_3m_UPKg&t=2046s
-// MINUTO - 19:20

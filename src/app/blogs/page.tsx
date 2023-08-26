@@ -21,7 +21,7 @@ const BlogsPage = () => {
           </Typography>
 
           <section className='grid sm-grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pb-4'>
-            {linksBlog.map(({ label, route }) => (
+            {Object.values(linksBlog).map(({ label, route }) => (
               <ItemPost
                 key={route}
                 name={label}

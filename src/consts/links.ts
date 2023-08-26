@@ -4,16 +4,18 @@ export const links = [{
 }
 
 ]
-export const linksBlog = [{
-  label: 'Frontend Blog',
-  route: '/blogs/frontend'
-},
-{
-  label: 'Backend Blog',
-  route: '/blogs/backend'
-},
-{
-  label: 'Data Blog',
-  route: '/blogs/data'
+export const linksBlog = {
+  frontend: {
+    label: 'Frontend Blog',
+    route: '/blogs/frontend'
+  },
+  backend: {
+    label: 'Backend Blog',
+    route: '/blogs/backend'
+  },
+  data: {
+    label: 'Data Blog',
+    route: '/blogs/data'
 
-}]
+  }
+}
