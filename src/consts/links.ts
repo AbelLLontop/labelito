@@ -1,6 +1,10 @@
 export const links = [{
   label: 'Blogs',
   route: '/blogs'
+},
+{
+  label: 'Mi Portafolio',
+  route: '/portafolio'
 }
 
 ]

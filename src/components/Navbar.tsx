@@ -8,8 +8,8 @@ import InputSwitch from './InputSwitch'
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false)
   return (
-    <section className='container max-w-6xl mx-auto px-8 sticky top-0 bg-white dark:bg-slate-900'>
-      <header className='py-4 flex justify-between items-center'>
+    <section className='container max-w-6xl mx-auto px-8 sticky top-0 bg-white dark:bg-slate-900 z-50'>
+      <header className='py-4 justify-between items-center flex flex-col sm:flex-row gap-4'>
         <Link
           href='/'
         >

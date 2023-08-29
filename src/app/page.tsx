@@ -1,6 +1,7 @@
 import HeaderPost from '@/components/HeaderPost'
 import Message from '@/components/Message'
 import Typography from '@/components/Typography'
+import Link from 'next/link'
 
 export default function Home () {
   return (
@@ -9,35 +10,51 @@ export default function Home () {
         <HeaderPost
           title='Welcome Abel'
           date='Aug 2, 2016'
-          author='Developer Abel'
+          author='Last Update'
         />
         <section>
           <Typography>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad porro suscipit inventore est iste vel excepturi quod odio? Eaque sint a accusamus temporibus culpa, expedita minima. Magni quisquam nihil adipisci.
+            Este es un indice resumido del contenido de esta webside
           </Typography>
+          <Link href='/blogs'>
+            <Typography variant='h2'>
+              Blogs
+            </Typography>
+          </Link>
           <Typography>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad porro suscipit inventore est iste vel excepturi quod odio? Eaque sint a accusamus temporibus culpa, expedita minima. Magni quisquam nihil adipisci.
+            Documentacion de lo que voy aprendiendo en el camino de mi carrera y proyectos personales,
           </Typography>
-          <Typography variant='h2'>
-            Blog
-          </Typography>
+          <Link href='/blogs/frontend'>
+            <Typography variant='h3'>
+              Frontend
+            </Typography>
+          </Link>
           <Typography>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad porro suscipit inventore est iste vel excepturi quod odio? Eaque sint a accusamus temporibus culpa, expedita minima. Magni quisquam nihil adipisci.
+            Blogs sobre Frontend
           </Typography>
+          <Link href='/blogs/backend'>
+            <Typography variant='h3'>
+              Backend
+            </Typography>
+          </Link>
           <Typography>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad porro suscipit inventore est iste vel excepturi quod odio? Eaque sint a accusamus temporibus culpa, expedita minima. Magni quisquam nihil adipisci.
+            Blogs sobre Backend
           </Typography>
-          <Typography variant='h3'>
-            Blog
-          </Typography>
+          <Link href='/blogs/data'>
+            <Typography variant='h3'>
+              Data
+            </Typography>
+          </Link>
           <Typography>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad porro suscipit inventore est iste vel excepturi quod odio? Eaque sint a accusamus temporibus culpa, expedita minima. Magni quisquam nihil adipisci.
+            Blogs sobre Data
           </Typography>
-          <Typography variant='h3'>
-            Blog
-          </Typography>
+          <Link href='/portafolio'>
+            <Typography variant='h2'>
+              Mi Portafolio
+            </Typography>
+          </Link>
           <Typography>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad porro suscipit inventore est iste vel excepturi quod odio? Eaque sint a accusamus temporibus culpa, expedita minima. Magni quisquam nihil adipisci.
+            En esta seccion podras encontrar mi portafolio de proyectos
           </Typography>
           <Message />
           <Typography>

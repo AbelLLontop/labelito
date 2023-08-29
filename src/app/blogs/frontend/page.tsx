@@ -16,6 +16,8 @@ const FrontendPage = async () => {
         date='Aug 2, 2016'
         author='Developer Abel'
       />
+      {/* <Search */}
+
       <Typography>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dolor dolorum, perferendis ipsa exercitationem et consequuntur obcaecati ad quia iusto molestias quasi error sunt totam! Iure non enim provident nulla.
       </Typography>

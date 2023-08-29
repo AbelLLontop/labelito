@@ -6,7 +6,7 @@ interface Props{
 }
 const ContentBlog = (props:Props) => {
   return (
-    <div className='mx-auto max-w-4xl px-8'>
+    <div className='mx-auto max-w-4xl px-8 pt-4'>
 
       <HeaderPost
         author='Abel llontop meza'
